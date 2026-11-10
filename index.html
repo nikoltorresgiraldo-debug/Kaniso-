@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kaniso Eco Hotel: una propuesta de hospedaje ecológico en Chía, Cundinamarca. Descanso, naturaleza y prácticas sostenibles.">
+  <title>Kaniso Eco Hotel | Descansa en armonía con la naturaleza</title>
+  <style>
+    :root{
+      --forest:#234b3b; --deep:#17382d; --sage:#8da58a; --cream:#f6f3e9;
+      --sand:#e7dfcd; --ink:#26352e; --muted:#69766d; --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .nav{position:absolute;z-index:5;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:22px 7%;color:white}
+    .brand{font-family:Georgia,serif;font-size:1.65rem;letter-spacing:2px;font-weight:bold}
+    .brand small{display:block;font:10px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase}
+    .nav-links{display:flex;gap:28px;align-items:center;font-size:.92rem}
+    .nav-links a:hover{color:#d6e4ce}
+    .nav-cta,.btn{display:inline-block;background:var(--sage);color:#fff;padding:12px 22px;border-radius:3px;font-weight:bold;transition:.2s}
+    .nav-cta:hover,.btn:hover{background:var(--forest);transform:translateY(-2px)}
+    .hero{min-height:680px;height:92vh;max-height:850px;display:flex;align-items:center;position:relative;color:#fff;background:linear-gradient(90deg,rgba(15,35,27,.76),rgba(15,35,27,.18)),url('https://images.unsplash.com/photo-1449158743715-0a90b0b5c3a8?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero-content{width:min(760px,86%);margin:80px 0 0 10%}
+    .eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:.75rem;font-weight:bold;color:#d5e3cf}
+    h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:normal;line-height:1.12}
+    h1{font-size:clamp(3rem,7vw,5.8rem);margin:18px 0}
+    .hero p{font-size:1.12rem;max-width:560px;color:#f1f3ec;margin-bottom:30px}
+    .section{padding:95px 8%}
+    .intro{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center}
+    .intro-image{min-height:440px;background:url('https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1100&q=85') center/cover;border-radius:2px}
+    .section h2{font-size:clamp(2.3rem,4vw,3.5rem);color:var(--forest);margin:12px 0 20px}
+    .section p{color:var(--muted)}
+    .tag{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;color:#71856e;font-weight:bold}
+    .values{background:var(--deep);color:white;text-align:center;padding:76px 8%}
+    .values h2{color:white;margin:10px 0 40px}
+    .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;max-width:1050px;margin:auto}
+    .value-grid article{padding:15px}
+    .value-icon{font-size:2rem}
+    .value-grid h3{font-size:1.45rem;margin:15px 0 8px}
+    .value-grid p{color:#d1dbd2;font-size:.95rem}
+    .services{background:#fff}
+    .center{text-align:center;max-width:720px;margin:0 auto 45px}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .service-card{background:var(--cream);padding:0 0 25px}
+    .service-card img{width:100%;height:220px;object-fit:cover;display:block}
+    .service-card div{padding:20px 22px 0}
+    .service-card h3{font-size:1.45rem;color:var(--forest);margin:0 0 8px}
+    .service-card p{font-size:.94rem;margin:0}
+    .sustain{display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center}
+    .sustain-image{height:430px;background:url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1100&q=85') center/cover}
+    .checks{padding:0;list-style:none;margin:25px 0}
+    .checks li{margin:12px 0;color:var(--muted)}
+    .checks li:before{content:'✓';color:var(--forest);font-weight:bold;margin-right:12px}
+    .cta{background:linear-gradient(rgba(22,52,41,.82),rgba(22,52,41,.82)),url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1800&q=85') center/cover;text-align:center;color:white;padding:90px 8%}
+    .cta h2{color:white;font-size:clamp(2.2rem,4vw,3.6rem);max-width:760px;margin:12px auto 18px}
+    .cta p{color:#e2e9df;max-width:620px;margin:0 auto 28px}
+    .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:8%;align-items:start}
+    .contact h2{margin-top:10px}
+    .contact-details{margin-top:25px;color:var(--muted)}
+    form{background:white;padding:30px;box-shadow:0 12px 35px rgba(30,50,35,.08)}
+    label{display:block;font-size:.86rem;font-weight:bold;margin:0 0 6px;color:var(--forest)}
+    input,select,textarea{width:100%;padding:12px;border:1px solid #d9dfd6;background:#fbfcf9;margin-bottom:17px;font:inherit;color:var(--ink);border-radius:2px}
+    textarea{min-height:100px;resize:vertical}
+    button{border:0;cursor:pointer;font:inherit}
+    .form-note{font-size:.78rem;color:var(--muted);margin:8px 0 0}
+    footer{background:#142d24;color:#d5dfd7;padding:35px 8%;display:flex;justify-content:space-between;gap:20px;align-items:center}
+    footer .brand{color:white}
+    footer p{font-size:.82rem;color:#bdc9bf;margin:5px 0}
+    .notice{display:none;margin-top:12px;color:var(--forest);font-weight:bold}
+    @media(max-width:800px){
+      .nav{padding:18px 6%}.nav-links{gap:13px}.nav-links a:not(.nav-cta){display:none}
+      .hero{min-height:620px;height:82vh}.hero-content{margin-left:7%}
+      .section{padding:70px 7%}.intro,.sustain,.contact{grid-template-columns:1fr;gap:35px}
+      .intro-image{min-height:330px;grid-row:1}
+      .value-grid,.service-grid{grid-template-columns:1fr}
+      .service-card img{height:250px}.sustain-image{height:320px}
+      footer{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#inicio">KANISO<small>eco hotel · chía</small></a>
+    <div class="nav-links">
+      <a href="#nosotros">Nosotros</a><a href="#experiencia">Experiencia</a><a href="#sostenibilidad">Sostenibilidad</a>
+      <a class="nav-cta" href="#contacto">Contáctanos</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="eyebrow">Naturaleza · descanso · bienestar</div>
+      <h1>Vuelve a conectar con lo natural.</h1>
+      <p>Un espacio pensado para descansar, compartir y disfrutar la tranquilidad de Chía, en armonía con el medio ambiente.</p>
+      <a class="btn" href="#experiencia">Descubre Kaniso</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro" id="nosotros">
+      <div>
+        <div class="tag">Bienvenidos a Kaniso</div>
+        <h2>Un descanso que se siente diferente.</h2>
+        <p>Kaniso Eco Hotel es una propuesta de hospedaje ecológico ubicada en Chía, Cundinamarca. Queremos ofrecer a parejas, familias y viajeros un lugar tranquilo para alejarse de la rutina, disfrutar de la naturaleza y compartir momentos especiales.</p>
+        <p>Nuestra idea combina comodidad y atención cercana con prácticas responsables que ayudan a cuidar los recursos naturales.</p>
+        <a class="btn" href="#contacto">Conoce nuestra propuesta</a>
+      </div>
+      <div class="intro-image" role="img" aria-label="Alojamiento rodeado de naturaleza"></div>
+    </section>
+
+    <section class="values">
+      <div class="tag">La esencia de Kaniso</div>
+      <h2>Pequeños detalles, grandes momentos.</h2>
+      <div class="value-grid">
+        <article><div class="value-icon">🌿</div><h3>Conexión natural</h3><p>Un ambiente tranquilo para disfrutar del paisaje y respirar lejos del ritmo cotidiano.</p></article>
+        <article><div class="value-icon">♻️</div><h3>Compromiso ambiental</h3><p>Promovemos el ahorro de agua y energía y el manejo adecuado de los residuos.</p></article>
+        <article><div class="value-icon">♡</div><h3>Bienestar y comodidad</h3><p>Un espacio acogedor para descansar y compartir con las personas que más quieres.</p></article>
+      </div>
+    </section>
+
+    <section class="section services" id="experiencia">
+      <div class="center">
+        <div class="tag">Tu experiencia</div>
+        <h2>Todo pensado para disfrutar.</h2>
+        <p>La propuesta de Kaniso reúne servicios esenciales para una estadía cómoda y una experiencia cercana a la naturaleza.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85" alt="Habitación cómoda y luminosa">
+          <div><h3>Hospedaje acogedor</h3><p>Habitaciones cómodas, espacios limpios y un ambiente preparado para el descanso.</p></div>
+        </article>
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85" alt="Mesa preparada para una comida">
+          <div><h3>Alimentación</h3><p>Una propuesta de alimentación para complementar la estadía y compartir buenos momentos.</p></div>
+        </article>
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85" alt="Paisaje natural al amanecer">
+          <div><h3>Entorno natural</h3><p>Un lugar para desconectarse de la rutina y disfrutar de la calma del entorno.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section sustain" id="sostenibilidad">
+      <div class="sustain-image" role="img" aria-label="Paisaje natural y montañas"></div>
+      <div>
+        <div class="tag">Nuestro compromiso</div>
+        <h2>El planeta también es parte de la experiencia.</h2>
+        <p>En Kaniso creemos que descansar y cuidar el entorno pueden ir de la mano. Por eso, nuestra propuesta busca incorporar hábitos sostenibles en las actividades del hotel.</p>
+        <ul class="checks">
+          <li>Uso responsable y ahorro del agua.</li>
+          <li>Consumo eficiente de energía.</li>
+          <li>Separación y manejo adecuado de residuos.</li>
+          <li>Promoción del respeto por la naturaleza.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="tag">Chía, Cundinamarca</div>
+      <h2>Haz espacio para la calma y la naturaleza.</h2>
+      <p>Conoce la propuesta de Kaniso Eco Hotel y descubre una nueva forma de disfrutar el descanso.</p>
+      <a class="btn" href="#contacto">Solicitar información</a>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <div>
+        <div class="tag">Hablemos</div>
+        <h2>¿Te gustaría conocer Kaniso?</h2>
+        <p>Déjanos tus datos y cuéntanos qué información te gustaría recibir sobre nuestra propuesta de hospedaje ecológico.</p>
+        <div class="contact-details">
+          <p><strong>Ubicación:</strong> Chía, Cundinamarca, Colombia</p>
+          <p><strong>Enfoque:</strong> Hospedaje, naturaleza y turismo responsable</p>
+        </div>
+      </div>
+      <form id="contactForm">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" name="correo" type="email" placeholder="tunombre@correo.com" required>
+        <label for="interes">¿Qué información te interesa?</label>
+        <select id="interes" name="interes">
+          <option>Servicios de hospedaje</option><option>Alimentación</option><option>Prácticas ecológicas</option><option>Información general</option>
+        </select>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..."></textarea>
+        <button class="btn" type="submit">Enviar solicitud</button>
+        <p class="form-note">Formulario de demostración para el proyecto académico. No envía datos a un servidor.</p>
+        <p class="notice" id="notice" role="status">¡Gracias! Tu solicitud de demostración quedó registrada en esta página.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div><a class="brand" href="#inicio">KANISO<small>eco hotel · chía</small></a><p>Descanso en armonía con la naturaleza.</p></div>
+    <p>© 2026 Kaniso Eco Hotel · Proyecto empresarial</p>
+  </footer>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event){
+      event.preventDefault();
+      document.getElementById('notice').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
